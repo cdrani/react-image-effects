@@ -1,4 +1,4 @@
-const imageEffects = (src) => ({
+const imageEffects = src => ({
   pencil: {
     backgroundImage: `url(${src}), url(${src})`,
     backgroundBlendMode: "difference",

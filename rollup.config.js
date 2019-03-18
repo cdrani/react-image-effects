@@ -12,7 +12,7 @@ export default {
     file: outputFile,
     format: 'cjs'
   },
-  external: ['styled-components'],
+  external: id => /^react|styled-component/.test(id),
   plugins: [
     replace({
       "process.env.NODE_ENV": JSON.stringify(NODE_ENV)
