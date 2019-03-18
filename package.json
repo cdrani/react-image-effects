@@ -3,7 +3,13 @@
   "version": "0.1.0",
   "main": "index.js",
   "description": "react image effects",
-  "keywords": ["react", "reactjs", "image", "react-image", "effects"],
+  "keywords": [
+    "react",
+    "reactjs",
+    "image",
+    "react-image",
+    "effects"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cdrani/react-image-effects.git"
@@ -17,5 +23,17 @@
   "bugs": {
     "url": "https://github.com/cdrani/react-image-effects/issues"
   },
-  "homepage": "https://github.com/cdrani/react-image-effects"
+  "homepage": "https://github.com/cdrani/react-image-effects",
+  "devDependencies": {
+    "@babel/core": "7.3.4",
+    "@babel/preset-env": "7.3.4",
+    "@babel/preset-react": "7.0.0",
+    "react": "16.8.4",
+    "react-dom": "16.8.4",
+    "rollup": "1.6.0",
+    "rollup-plugin-babel": "4.3.2",
+    "rollup-plugin-commonjs": "9.2.1",
+    "rollup-plugin-node-resolve": "4.0.1",
+    "rollup-plugin-replace": "2.1.0"
+  }
 }
