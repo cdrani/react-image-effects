@@ -1,0 +1,21 @@
+{
+  "name": "react-image-effects",
+  "version": "0.1.0",
+  "main": "index.js",
+  "description": "react image effects",
+  "keywords": ["react", "reactjs", "image", "react-image", "effects"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdrani/react-image-effects.git"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "author": "cdrani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cdrani/react-image-effects/issues"
+  },
+  "homepage": "https://github.com/cdrani/react-image-effects"
+}
