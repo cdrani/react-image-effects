@@ -43,6 +43,42 @@ const imageEffects = src => ({
     backgroundImage: `url(${src}), url(${src}), url(${src})`,
     backgroundSize: "100% 100%, 100% 1000%",
     backgroundBlendMode: "screen, overlay"
+  },
+  airbrush: {
+    position: "relative",
+    overflow: "hidden",
+    "::after": {
+      display: "block",
+      content: "''",
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: "inherit",
+      filter: "brightness(1.5) saturate(100) blur(5px) contrast(5)",
+      mixBlendMode: "multiply"
+    }
+  },
+  warhol: {
+    backgroundImage: `linear-gradient(#14EBFF 0, #14EBFF 50%, #FFFF70 50%, #FFFF70 100%), linear-gradient(#FF85DA 0, #FF85DA 50%, #AAA 50%, #AAA 100%), url(${src})`,
+    backgroundSize: "50% 100%, 50% 100%, 50% 50%",
+    backgroundPosition: "top left, top right",
+    backgroundRepeat: "no-repeat, no-repeat, repeat",
+    backgroundBlendMode: "color"
+  },
+  mosaic: {
+    backgroundImage: `url(${src}), url(${src})`,
+    backgroundSize: "cover, 5% 5%",
+    backgroundPosition: "center",
+    backgroundBlendMode: "overlay"
+  },
+  chalkboard: {
+    backgroundImage: `url(${src}), url(${src})`,
+    backgroundBlendMode: "difference",
+    backgroundPosition:
+      "calc(50% - 1px) calc(50% - 1px), calc(50% + 1px) calc(50% + 1px)",
+    filter: "brightness(1.5) grayscale(1)"
   }
 });
 

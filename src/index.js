@@ -12,7 +12,11 @@ const ImageEffect = ({ url, effect }) => {
     background-position: center;
   `;
 
-  const Effect = styled(Image)(props => imageEffects(props.url)[effect]);
+  const effectObject = imageEffects(url)[effect]
+
+  const Effect = styled(Image)`
+  ${effectObject}
+  `
   return <Effect url={url} />;
 };
 
