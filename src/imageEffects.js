@@ -1,4 +1,5 @@
 const imageEffects = src => ({
+  none: {},
   "night-vision": {
     backgroundImage: `url(${src}), radial-gradient(#0F0, #000), repeating-linear-gradient(transparent 0, rgba(0, 0, 0, 0.1) 2.5px, transparent 5px)`,
     backgroundSize: "cover",
@@ -177,6 +178,55 @@ const imageEffects = src => ({
       backgroundPosition: "center",
       mixBlendMode: "multiply",
       filter: "brightness(1.3) blur(2px) contrast(2)"
+    }
+  },
+  hallucination: {
+    position: "relative",
+    overflow: "hidden",
+    backgroundColor: "magenta",
+    backgroundBlendMode: "screen",
+    "::before, ::after": {
+      display: "block",
+      content: "''",
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: "inherit",
+      mixBlendMode: "multiply",
+      transform: "scale(1.05)"
+    },
+    "::before": {
+      backgroundColor: "yellow",
+      backgroundBlendMode: "screen",
+      transformOrigin: "top left"
+    },
+    "::after": {
+      backgroundColor: "cyan",
+      backgroundBlendMode: "screen",
+      transformOrigin: "bottom right"
+    }
+  },
+  "colored-pencil": {
+    position: "relative",
+    "::before, ::after": {
+      display: "block",
+      content: "''",
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundSize: "cover",
+      boxShadow: "inset 0 0 0 1px black"
+    },
+    "::before": {
+      backgroundImage: `url(${src}), url(${src})`,
+      backgroundBlendMode: "difference",
+      backgroundPosition:
+        "calc(50% - 1px) calc(50% - 1px), calc(50% + 1px) calc(50% + 1px)",
+      filter: "brightness(2) invert(1) grayscale(1)"
     }
   }
 });
