@@ -1,4 +1,4 @@
-const imageEffects = (src, effect) => ({
+const imageEffects = (src) => ({
   pencil: {
     backgroundImage: `url(${src}), url(${src})`,
     backgroundBlendMode: "difference",
@@ -7,6 +7,6 @@ const imageEffects = (src, effect) => ({
     filter: "brightness(2) invert(1) grayscale(1)",
     boxShadow: "inset 0 0 0 1px black"
   }
-});
+})
 
-export default imageEffects;
+export default imageEffects

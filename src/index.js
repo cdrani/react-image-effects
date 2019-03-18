@@ -1,4 +1,4 @@
-import 'react' from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import imageEffects from './imageEffects'
@@ -11,7 +11,7 @@ const ImageEffect = ({ src, effect }) => {
     background-position: center;
   `
 
-  const Effect = styled(Image)(imageEffects[effect])
+  const Effect = styled(Image)(props => imageEffects(props.src)[effect])
   return <Effect src={src} />
 }
 
@@ -37,7 +37,7 @@ ImageEffect.propTypes = {
     'infrared',
     'night-vision',
     'warhol',
-    'selective-color'
+    'selective-color',
     'mirror-h',
     'mirror-v'
   ])
