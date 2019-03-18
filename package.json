@@ -15,8 +15,7 @@
     "url": "git+https://github.com/cdrani/react-image-effects.git"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": ">= 16.x.x"
   },
   "author": "cdrani",
   "license": "MIT",
