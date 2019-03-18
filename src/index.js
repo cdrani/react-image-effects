@@ -6,12 +6,12 @@ import imageEffects from './imageEffects'
 
 const ImageEffect = ({ src, effect }) => {
   const Image = styled.img`
-    background-image: ${props => url(props.src)};
+    background-image: ${props => `url(${props.src})`};
     background-size: cover;
     background-position: center;
   `
 
-  const Effect = styled(Image)(props => imageEffects(props.src)[effect])
+  const Effect = styled(Image)(props => imageEffects(src)[effect])
   return <Effect src={src} />
 }
 
