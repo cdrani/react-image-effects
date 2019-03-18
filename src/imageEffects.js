@@ -110,6 +110,74 @@ const imageEffects = src => ({
       mixBlendMode: "color",
       filter: "brightness(3)"
     }
+  },
+  "mirror-h": {
+    position: "relative",
+    "::before, ::after": {
+      display: "block",
+      content: "''",
+      position: "absolute",
+      top: 0,
+      bottom: 0,
+      background: "inherit"
+    },
+    "::before": {
+      left: 0,
+      right: "50%",
+      transform: "scaleX(-1)"
+    },
+    "::after": {
+      left: "50%",
+      right: 0
+    }
+  },
+  "mirror-v": {
+    position: "relative",
+    "::before, ::after": {
+      display: "block",
+      content: "''",
+      position: "absolute",
+      left: 0,
+      right: 0,
+      background: "inherit"
+    },
+    "::before": {
+      top: 0,
+      bottom: "50%",
+      transform: "scaleX(-1)"
+    },
+    "::after": {
+      top: "50%",
+      bottom: 0
+    }
+  },
+  watercolor: {
+    position: "relative",
+    overflow: "hidden",
+    "::before, ::after": {
+      display: "block",
+      content: "''",
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundSize: "cover"
+    },
+    "::before": {
+      backgroundImage: `url(${src}), url(${src})`,
+      backgroundBlendMode: "difference",
+      backgroundPosition:
+        "calc(50% - 1px) calc(50% - 1px), calc(50% + 1px) calc(50% + 1px)",
+      filter: "brightness(2) invert(1) grayscale(1)",
+      boxShadow: "inset 0 0 0 1px black"
+    },
+    "::after": {
+      backgroundImage: `url(${src})`,
+      backgroundPosition: "center",
+      mixBlendMode: "multiply",
+      filter: "brightness(1.3) blur(2px) contrast(2)"
+    }
   }
 });
 
