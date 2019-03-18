@@ -3,6 +3,12 @@
   "version": "0.1.0",
   "main": "index.js",
   "description": "react image effects",
+  "scripts": {
+    "prepublishOnly": "yarn release",
+    "release": "yarn build:dev && yarn build:prod",
+    "build:prod": "NODE_ENV=production rollup -c",
+    "build:dev": "NODE_ENV=development rollup -c"
+  },
   "keywords": [
     "react",
     "reactjs",
