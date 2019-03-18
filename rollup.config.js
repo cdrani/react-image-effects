@@ -6,19 +6,13 @@ import resolve from 'rollup-plugin-node-resolve'
 const NODE_ENV = process.env.NODE_ENV || 'development'
 const outputFile = NODE_ENV === 'production' ? './lib/prod.js' : './lib/dev.js'
 
-import pkg from './package.json'
 export default {
   input: 'src/index.js',
-  output: [
-    {
-      file: pkg.main,
-      format: 'cjs'
-    },
-    {
-      file: pkg.module,
-      format: 'es'
-    }
-  ],
+  output: {
+    file: outputFile,
+    format: 'cjs'
+  },
+  external: ['styled-components'],
   plugins: [
     replace({
       "process.env.NODE_ENV": JSON.stringify(NODE_ENV)
@@ -28,6 +22,22 @@ export default {
       exclude: 'node_modules/**'
     }),
     resolve(),
-    commonjs()
+    commonjs({
+      include: 'node_modules/**',
+      namedExports: {
+        'node_modules/react/index.js': [
+          'cloneElement',
+          'createContext',
+          'Component',
+          'createElement'
+        ],
+        'node_modules/react-dom/index.js': ['render', 'hydrate'],
+        'node_modules/react-is/index.js': [
+          'isElement',
+          'isValidElementType',
+          'ForwardRef'
+        ]
+      }
+    })
   ]
 }
