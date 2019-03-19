@@ -8,12 +8,21 @@
     "release": "yarn build:dev && yarn build:prod",
     "build:prod": "NODE_ENV=production rollup -c",
     "build:dev": "NODE_ENV=development rollup -c",
-    "start": "NODE_ENV=development rollup -c -w",
-    "precommit": "lint-staged"
+    "start": "NODE_ENV=development rollup -c -w"
   },
   "lint-staged": {
-    "*.js": ["eslint"],
-    "*.{js}": ["prettier-eslint --list-different"]
+    "*.js": [
+      "eslint"
+    ],
+    "*.{js,md}": [
+      "prettier-eslint --list-different",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "keywords": [
     "react",
