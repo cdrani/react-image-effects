@@ -6,14 +6,13 @@
   <img src="react-image-effects.png">
 </p>
 
-
 ### Install
+
 `npm i react-image-effects`
 
 or
 
 `yarn add react-image-effects`
-
 
 ### Usage
 
@@ -27,7 +26,7 @@ export default function App(props) {
       <ImageEffect
         url="https://example.com/test.jpg"
         effect="airbrush"
-        width="640px" 
+        width="640px"
         height="480px"
       />
     </div>
@@ -35,21 +34,18 @@ export default function App(props) {
 }
 ```
 
-
 ### Properties
 
-Prop | Type | Required | Default
-:--- |:--- |:--- |:---
-`url`|string|yes||
-`effect`|string|no|'none'||
-`width`|string|no|'800px'||
-`height`|string|no|'400px'
-
+| Prop     | Type   | Required | Default |
+| :------- | :----- | :------- | :------ |
+| `url`    | string | yes      |         |
+| `effect` | string | no       | 'none'  |  |
+| `width`  | string | no       | '600px' |  |
+| `height` | string | no       | '300px' |
 
 ## Contributing
 
 PRs are welcome.
-
 
 ## License
 
