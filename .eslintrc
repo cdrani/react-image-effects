@@ -1,0 +1,8 @@
+{
+  "root": true,
+  "parser": "babel-eslint",
+  "extends": ["prettier", "prettier/react"],
+  "env": {
+    "node": true
+  }
+}
