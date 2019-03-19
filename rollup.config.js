@@ -18,6 +18,7 @@ export default {
       format: 'es'
     }
   ],
+  external: ['react', 'styled-components'],
   plugins: [
     external(),
     url(),
