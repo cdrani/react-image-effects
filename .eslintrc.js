@@ -4,7 +4,7 @@ module.exports = {
     es6: true,
     node: true
   },
-  extends: 'standard',
+  extends: ['standard', 'standard-react'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
