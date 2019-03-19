@@ -1,22 +1,22 @@
 {
   "name": "react-image-effects",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "description": "react image effects",
+  "keywords": [
+    "react",
+    "reactjs",
+    "image",
+    "react-image",
+    "image-effects"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdrani/react-image-effects.git"
+  },
   "scripts": {
-    "keywords": [
-      "react",
-      "reactjs",
-      "image",
-      "react-image",
-      "image-effects"
-    ],
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/cdrani/react-image-effects.git"
-    },
     "start": "rollup -c -w",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
