@@ -1,3 +1,15 @@
+const mirrorEffects = (pos, before, after) => ({
+  position: 'relative',
+  '::before, ::after': {
+    display: 'block',
+    content: "''",
+    position: 'absolute',
+    ...pos
+  },
+  ...before,
+  ...after
+})
+
 const imageEffects = src => ({
   airbrush: {
     position: 'relative',
@@ -110,46 +122,46 @@ const imageEffects = src => ({
     backgroundSize: '100% 100%, 100% 1000%',
     backgroundBlendMode: 'screen, overlay'
   },
-  'mirror-h': {
-    position: 'relative',
-    '::before, ::after': {
-      display: 'block',
-      content: "''",
-      position: 'absolute',
+  'mirror-h': mirrorEffects(
+    {
       top: 0,
       bottom: 0,
       background: 'inherit'
     },
-    '::before': {
-      left: 0,
-      right: '50%',
-      transform: 'scaleX(-1)'
+    {
+      '::before': {
+        left: 0,
+        right: '50%',
+        transform: 'scaleX(-1)'
+      }
     },
-    '::after': {
-      left: '50%',
-      right: 0
+    {
+      '::after': {
+        left: '50%',
+        right: 0
+      }
     }
-  },
-  'mirror-v': {
-    position: 'relative',
-    '::before, ::after': {
-      display: 'block',
-      content: "''",
-      position: 'absolute',
+  ),
+  'mirror-v': mirrorEffects(
+    {
       left: 0,
       right: 0,
       background: 'inherit'
     },
-    '::before': {
-      top: 0,
-      bottom: '50%',
-      transform: 'scaleX(-1)'
+    {
+      '::before': {
+        top: 0,
+        bottom: '50%',
+        transform: 'scaleY(-1)'
+      }
     },
-    '::after': {
-      top: '50%',
-      bottom: 0
+    {
+      '::after': {
+        top: '50%',
+        bottom: 0
+      }
     }
-  },
+  ),
   mosaic: {
     backgroundImage: `url(${src}), url(${src})`,
     backgroundSize: 'cover, 5% 5%',
