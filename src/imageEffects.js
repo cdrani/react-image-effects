@@ -4,6 +4,7 @@ const mirrorEffects = (pos, before, after) => ({
     display: 'block',
     content: "''",
     position: 'absolute',
+    background: 'inherit',
     ...pos
   },
   ...before,
@@ -125,8 +126,7 @@ const imageEffects = src => ({
   'mirror-h': mirrorEffects(
     {
       top: 0,
-      bottom: 0,
-      background: 'inherit'
+      bottom: 0
     },
     {
       '::before': {
@@ -145,8 +145,7 @@ const imageEffects = src => ({
   'mirror-v': mirrorEffects(
     {
       left: 0,
-      right: 0,
-      background: 'inherit'
+      right: 0
     },
     {
       '::before': {
