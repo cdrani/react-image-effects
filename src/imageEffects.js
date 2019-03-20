@@ -1,4 +1,4 @@
-const mirrorEffects = (pos, before, after) => ({
+const mirrorEffects = (before, after, pos = { top: 0, bottom: 0 }) => ({
   position: 'relative',
   '::before, ::after': {
     display: 'block',
@@ -130,10 +130,6 @@ const imageEffects = src => ({
   },
   'mirror-h': mirrorEffects(
     {
-      top: 0,
-      bottom: 0
-    },
-    {
       '::before': {
         left: 0,
         right: '50%',
@@ -149,10 +145,6 @@ const imageEffects = src => ({
   ),
   'mirror-v': mirrorEffects(
     {
-      left: 0,
-      right: 0
-    },
-    {
       '::before': {
         top: 0,
         bottom: '50%',
@@ -164,6 +156,10 @@ const imageEffects = src => ({
         top: '50%',
         bottom: 0
       }
+    },
+    {
+      left: 0,
+      right: 0
     }
   ),
   mosaic: {
