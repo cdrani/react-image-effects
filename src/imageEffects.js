@@ -11,23 +11,34 @@ const mirrorEffects = (pos, before, after) => ({
   ...after
 })
 
+const blockPosition = (key, pos, filter, pseudo = {}) => ({
+  ...pos,
+  [key]: {
+    display: 'block',
+    content: "''",
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    ...filter
+  },
+  ...pseudo
+})
+
 const imageEffects = src => ({
-  airbrush: {
-    position: 'relative',
-    overflow: 'hidden',
-    '::after': {
-      display: 'block',
-      content: "''",
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
+  airbrush: blockPosition(
+    '::after',
+    {
+      position: 'relative',
+      overflow: 'hidden'
+    },
+    {
       background: 'inherit',
       filter: 'brightness(1.5) saturate(100) blur(5px) contrast(5)',
       mixBlendMode: 'multiply'
     }
-  },
+  ),
   chalkboard: {
     backgroundImage: `url(${src}), url(${src})`,
     backgroundBlendMode: 'difference',
@@ -50,27 +61,23 @@ const imageEffects = src => ({
     backgroundBlendMode: 'overlay',
     backgroundRepeat: 'no-repeat'
   },
-  'colored-pencil': {
-    position: 'relative',
-    '::before, ::after': {
-      display: 'block',
-      content: "''",
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
+  'colored-pencil': blockPosition(
+    '::before, ::after',
+    { position: 'relative' },
+    {
       backgroundSize: 'cover',
       boxShadow: 'inset 0 0 0 1px black'
     },
-    '::before': {
-      backgroundImage: `url(${src}), url(${src})`,
-      backgroundBlendMode: 'difference',
-      backgroundPosition:
-        'calc(50% - 1px) calc(50% - 1px), calc(50% + 1px) calc(50% + 1px)',
-      filter: 'brightness(2) invert(1) grayscale(1)'
+    {
+      '::before': {
+        backgroundImage: `url(${src}), url(${src})`,
+        backgroundBlendMode: 'difference',
+        backgroundPosition:
+          'calc(50% - 1px) calc(50% - 1px), calc(50% + 1px) calc(50% + 1px)',
+        filter: 'brightness(2) invert(1) grayscale(1)'
+      }
     }
-  },
+  ),
   emboss: {
     backgroundImage: `url(${src}), url(${src}), url(${src})`,
     backgroundBlendMode: 'difference, screen',
@@ -84,34 +91,32 @@ const imageEffects = src => ({
     backgroundSize: '100%, 100000% 100%, 100% 100000%',
     backgroundBlendMode: 'overlay'
   },
-  hallucination: {
-    position: 'relative',
-    overflow: 'hidden',
-    backgroundColor: 'magenta',
-    backgroundBlendMode: 'screen',
-    '::before, ::after': {
-      display: 'block',
-      content: "''",
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
+  hallucination: blockPosition(
+    '::before, ::after',
+    {
+      position: 'relative',
+      overflow: 'hidden',
+      backgroundColor: 'magenta',
+      backgroundBlendMode: 'screen'
+    },
+    {
       background: 'inherit',
       mixBlendMode: 'multiply',
       transform: 'scale(1.05)'
     },
-    '::before': {
-      backgroundColor: 'yellow',
-      backgroundBlendMode: 'screen',
-      transformOrigin: 'top left'
-    },
-    '::after': {
-      backgroundColor: 'cyan',
-      backgroundBlendMode: 'screen',
-      transformOrigin: 'bottom right'
+    {
+      '::before': {
+        backgroundColor: 'yellow',
+        backgroundBlendMode: 'screen',
+        transformOrigin: 'top left'
+      },
+      '::after': {
+        backgroundColor: 'cyan',
+        backgroundBlendMode: 'screen',
+        transformOrigin: 'bottom right'
+      }
     }
-  },
+  ),
   'low-ink-h': {
     backgroundImage: `url(${src}), url(${src}), url(${src})
 `,
@@ -188,23 +193,17 @@ const imageEffects = src => ({
     backgroundSize: '60%, 20%',
     backgroundRepeat: 'no-repeat, repeat'
   },
-  'selective-color': {
-    position: 'relative',
-    '::before, ::after': {
-      display: 'block',
-      content: "''",
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
+  'selective-color': blockPosition(
+    '::before, ::after',
+    { position: 'relative' },
+    {
       background: 'inherit',
       backgroundColor: 'red',
       backgroundBlendMode: 'screen',
       mixBlendMode: 'color',
       filter: 'brightness(3)'
     }
-  },
+  ),
   warhol: {
     backgroundImage: `linear-gradient(#14EBFF 0, #14EBFF 50%, #FFFF70 50%, #FFFF70 100%), linear-gradient(#FF85DA 0, #FF85DA 50%, #AAA 50%, #AAA 100%), url(${src})`,
     backgroundSize: '50% 100%, 50% 100%, 50% 50%',
@@ -212,34 +211,32 @@ const imageEffects = src => ({
     backgroundRepeat: 'no-repeat, no-repeat, repeat',
     backgroundBlendMode: 'color'
   },
-  watercolor: {
-    position: 'relative',
-    overflow: 'hidden',
-    '::before, ::after': {
-      display: 'block',
-      content: "''",
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
+  watercolor: blockPosition(
+    '::before, ::after',
+    {
+      position: 'relative',
+      overflow: 'hidden'
+    },
+    {
       backgroundSize: 'cover'
     },
-    '::before': {
-      backgroundImage: `url(${src}), url(${src})`,
-      backgroundBlendMode: 'difference',
-      backgroundPosition:
-        'calc(50% - 1px) calc(50% - 1px), calc(50% + 1px) calc(50% + 1px)',
-      filter: 'brightness(2) invert(1) grayscale(1)',
-      boxShadow: 'inset 0 0 0 1px black'
-    },
-    '::after': {
-      backgroundImage: `url(${src})`,
-      backgroundPosition: 'center',
-      mixBlendMode: 'multiply',
-      filter: 'brightness(1.3) blur(2px) contrast(2)'
+    {
+      '::before': {
+        backgroundImage: `url(${src}), url(${src})`,
+        backgroundBlendMode: 'difference',
+        backgroundPosition:
+          'calc(50% - 1px) calc(50% - 1px), calc(50% + 1px) calc(50% + 1px)',
+        filter: 'brightness(2) invert(1) grayscale(1)',
+        boxShadow: 'inset 0 0 0 1px black'
+      },
+      '::after': {
+        backgroundImage: `url(${src})`,
+        backgroundPosition: 'center',
+        mixBlendMode: 'multiply',
+        filter: 'brightness(1.3) blur(2px) contrast(2)'
+      }
     }
-  }
+  )
 })
 
 export default imageEffects
