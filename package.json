@@ -22,7 +22,9 @@
     "lint:fix": "eslint src --fix",
     "build": "rollup -c",
     "predeploy": "cd example && yarn && yarn build",
-    "deploy": "gh-pages example/build"
+    "deploy": "gh-pages example/build",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "lint-staged": {
     "*.js": [
@@ -52,6 +54,7 @@
     "@babel/preset-env": "7.3.4",
     "@babel/preset-react": "7.0.0",
     "babel-eslint": "10.0.1",
+    "babel-loader": "8.0.5",
     "eslint": "5.15.3",
     "eslint-config-prettier": "4.1.0",
     "eslint-config-standard": "12.0.0",
@@ -82,5 +85,11 @@
   },
   "files": [
     "dist"
+  ],
+  "browserslist": [
+    ">1%",
+    "last 1 version",
+    "Firefox ESR",
+    "not dead"
   ]
 }

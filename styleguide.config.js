@@ -3,6 +3,17 @@ const path = require('path')
 module.exports = {
   title: 'React Image Effects',
   pagePerSection: true,
+  webpackConfig: {
+    module: {
+      rules: [
+        {
+          test: /\.jsx?$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader'
+        }
+      ]
+    }
+  },
   sections: [
     {
       name: 'React Image Effects',
