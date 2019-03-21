@@ -1,4 +1,4 @@
-const path = require('path')
+// const path = require('path')
 
 module.exports = {
   title: 'React Image Effects',
@@ -18,12 +18,12 @@ module.exports = {
   sections: [
     {
       name: 'React Image Effects',
-      content: 'docs/react-image-effects.md',
+      content: 'docs/ReactImageEffects.md',
       description: 'welcome'
     },
     {
       name: 'Getting Started',
-      content: 'docs/getting-started.md'
+      content: 'docs/GetStarted.md'
     },
     {
       name: 'Effects',
@@ -72,18 +72,18 @@ module.exports = {
       base: '"Source Sans Pro", sans-serif'
     }
   },
-  styleguideComponents: {
-    StyleGuideRenderer: path.join(
-      __dirname,
-      'styleguide/components/StyleGuide'
-    ),
-    SectionsRenderer: path.join(__dirname, 'styleguide/components/Sections'),
-    SectionRenderer: path.join(__dirname, 'styleguide/components/Section'),
-    'slots/IsolateButton': path.join(
-      __dirname,
-      'styleguide/components/IsolateButton'
-    )
-  },
-  styleguideDir: 'build/react-kawaii',
+  // styleguideComponents: {
+  //   StyleGuideRenderer: path.join(
+  //     __dirname,
+  //     'styleguide/components/StyleGuide'
+  //   ),
+  //   SectionsRenderer: path.join(__dirname, 'styleguide/components/Sections'),
+  //   SectionRenderer: path.join(__dirname, 'styleguide/components/Section'),
+  //   'slots/IsolateButton': path.join(
+  //     __dirname,
+  //     'styleguide/components/IsolateButton'
+  //   )
+  // },
+  // styleguideDir: 'build/react-kawaii',
   serverPort: 8210
 }
