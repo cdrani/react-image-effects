@@ -1,19 +1,21 @@
 Installation
 
-> npm install react-image-effects
+```bash
+npm install react-image-effects
+```
 
 or
 
-> yarn add react-image-effects
+```bash
+yarn add react-image-effects
+```
 
 Import it into your code:
 
-```js
+```javascript static
 import ImageEffect from 'react-image-effects'
 
-import desktop from './images/desktop.png'
-
 const Example = () => (
-  <ImageEffect url={desktop} effect="mirror-h">
+  <ImageEffect url="https://picsum.photos/300/300" effect="mirror-h" />
 )
 ```
