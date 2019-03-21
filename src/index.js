@@ -55,4 +55,6 @@ ImageEffect.defaultProps = {
   height: '300px'
 }
 
+ImageEffect.displayName = 'ImageEfect'
+
 export default ImageEffect
