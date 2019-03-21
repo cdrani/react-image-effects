@@ -3,6 +3,7 @@ const path = require('path')
 module.exports = {
   title: 'React Image Effects',
   pagePerSection: true,
+  components: 'src/components/[A-Z]*.js',
   webpackConfig: {
     module: {
       rules: [
