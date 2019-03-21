@@ -17,6 +17,6 @@ import ImageEffect from 'react-image-effects'
 
 
 const Example = () => (
-  <ImageEffect url= effect="mirror-h">
+  <ImageEffect url="https://picsum.photos/300/300" effect="mirror-h">
 )
 ```

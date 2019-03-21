@@ -3,7 +3,7 @@
 module.exports = {
   title: 'React Image Effects',
   pagePerSection: true,
-  components: 'src/components/[A-Z]*.js',
+  components: './src/components/[A-Z]*.js',
   webpackConfig: {
     module: {
       rules: [
@@ -18,8 +18,7 @@ module.exports = {
   sections: [
     {
       name: 'React Image Effects',
-      content: 'docs/ReactImageEffects.md',
-      description: 'welcome'
+      content: 'docs/ReactImageEffects.md'
     },
     {
       name: 'Getting Started',
@@ -27,28 +26,18 @@ module.exports = {
     },
     {
       name: 'Effects',
-      sections: [
-        { name: 'airbrush', content: 'docs/airbrush.md' },
-        { name: 'chalkboard', content: 'docs/chalkboard.md' }
-      ]
-    },
-    {
-      name: 'Effects',
-      content: 'docs/ui.md',
+      components: './src/effects/[A-Z]*.js',
+
       exampleMode: 'expand',
       usageMode: 'expand'
     }
   ],
-  skipComponentsWithoutExample: true,
-  getComponentPathLine: () => {
-    return `import ImageEffect from 'react-image-effects'`
-  },
   template: {
     head: {
       meta: [
         {
           name: 'description',
-          content: 'Cute React SVG Components'
+          content: 'Cool Visual Image Effects'
         }
       ],
       links: [
