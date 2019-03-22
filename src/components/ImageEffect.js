@@ -1,7 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import imageEffects from './imageEffects'
+import imageEffectProps from '../types'
 
 const ImageEffect = ({ url, effect, width, height }) => {
   const Image = styled.div`
@@ -20,41 +20,12 @@ const ImageEffect = ({ url, effect, width, height }) => {
   return <Effect url={url} />
 }
 
-ImageEffect.propTypes = {
-  url: PropTypes.string.isRequired,
-  effect: PropTypes.oneOf([
-    'airbrush',
-    'chalkboard',
-    'collage',
-    'colored-chalkboard',
-    'colored-pencil',
-    'emboss',
-    'flannel',
-    'hallucination',
-    'infrared',
-    'low-ink-h',
-    'low-ink-v',
-    'mirror-h',
-    'mirror-v',
-    'mosaic',
-    'night-vision',
-    'none',
-    'pencil',
-    'photo-border',
-    'selective-color',
-    'warhol',
-    'watercolor'
-  ]),
-  width: PropTypes.string,
-  height: PropTypes.string
-}
+ImageEffect.propTypes = imageEffectProps
 
 ImageEffect.defaultProps = {
   effect: 'none',
   width: '600px',
   height: '300px'
 }
-
-ImageEffect.displayName = 'ImageEfect'
 
 export default ImageEffect

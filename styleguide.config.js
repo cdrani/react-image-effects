@@ -3,7 +3,7 @@
 module.exports = {
   title: 'React Image Effects',
   pagePerSection: true,
-  components: './src/components/[A-Z]*.js',
+  components: './src/index.js',
   webpackConfig: {
     module: {
       rules: [
@@ -26,12 +26,14 @@ module.exports = {
     },
     {
       name: 'Effects',
-      components: './src/effects/[A-Z]*.js',
-
+      components: './src/effects/**/[A-Z]*.js',
       exampleMode: 'expand',
       usageMode: 'expand'
     }
   ],
+  getComponentPathLine: pathname => {
+    return `import ImageEffect from 'react-image-effect'`
+  },
   template: {
     head: {
       meta: [
