@@ -1,0 +1,17 @@
+{
+  "name": "react-image-effects",
+  "vision": 2,
+  "alias": "react-image-effects",
+  "builds": [
+    {
+      "src": "./build/build/index.html",
+      "use": "@now/static"
+    }
+  ],
+  "github": {
+    "enabled": true,
+    "silent": true,
+    "autoAlias": true,
+    "autoJobCancelation": true
+  }
+}
