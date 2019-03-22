@@ -1,21 +1,6 @@
-Installation
+- [Github Repository](https://github.com/cdrani/react-image-effects)
+- [NPM Package](https://www.npmjs.com/package/react-image-effects)
 
-```bash
-npm install react-image-effects
-```
-
-or
-
-```bash
-yarn add react-image-effects
-```
-
-Import it into your code:
-
-```javascript static
-import ImageEffect from 'react-image-effects'
-
-const Example = () => (
-  <ImageEffect url="https://picsum.photos/300/300" effect="mirror-h" />
-)
-```
+react-image-effects is a library of image effects wrapped into a react
+component. Ideal for adding some cool visual effects to your local or remote
+images.
