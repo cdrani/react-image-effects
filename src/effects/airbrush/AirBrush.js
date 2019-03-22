@@ -1,15 +1,53 @@
 import React from 'react'
-import AirBrush from './../../../'
-import imageEffectProps from '../../types'
+import PropTypes from 'prop-types'
+import { createImageComponent } from '../../utils'
 
 /**
  * @visibleName airbrush
  */
 
-const ImageEffect = ({ url, effect, width, height }) => (
-  <AirBrush url={url} effect={effect} width={width} height={height} />
-)
+const ImageEffect = ({ url, effect, width, height }) => {
+  const Image = createImageComponent(width, height, url, effect)
+  return <Image />
+}
 
-ImageEffect.propTypes = imageEffectProps
+ImageEffect.propTypes = {
+  /** local or remote path to image */
+  url: PropTypes.string.isRequired,
+  /** image effects */
+  effect: PropTypes.oneOf([
+    'airbrush',
+    'chalkboard',
+    'collage',
+    'colored-chalkboard',
+    'colored-pencil',
+    'emboss',
+    'flannel',
+    'hallucination',
+    'infrared',
+    'low-ink-h',
+    'low-ink-v',
+    'mirror-h',
+    'mirror-v',
+    'mosaic',
+    'night-vision',
+    'none',
+    'pencil',
+    'photo-border',
+    'selective-color',
+    'warhol',
+    'watercolor'
+  ]),
+  /** width of image/component */
+  width: PropTypes.string,
+  /** width of image/component */
+  height: PropTypes.string
+}
+
+ImageEffect.defaultProps = {
+  effect: 'none',
+  width: '600px',
+  height: '300px'
+}
 
 export default ImageEffect

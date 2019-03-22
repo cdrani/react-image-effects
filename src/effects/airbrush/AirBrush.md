@@ -1,6 +1,6 @@
 AirBrush Effect
 
-```js
+```jsx
 <ImageEffect
   url="https://picsum.photos/900/300"
   effect="airbrush"

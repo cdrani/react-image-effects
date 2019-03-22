@@ -1,9 +1,7 @@
-// const path = require('path')
-
 module.exports = {
   title: 'React Image Effects',
   pagePerSection: true,
-  components: './src/index.js',
+  components: './src/components/ImageEffect.js',
   webpackConfig: {
     module: {
       rules: [
@@ -63,18 +61,5 @@ module.exports = {
       base: '"Source Sans Pro", sans-serif'
     }
   },
-  // styleguideComponents: {
-  //   StyleGuideRenderer: path.join(
-  //     __dirname,
-  //     'styleguide/components/StyleGuide'
-  //   ),
-  //   SectionsRenderer: path.join(__dirname, 'styleguide/components/Sections'),
-  //   SectionRenderer: path.join(__dirname, 'styleguide/components/Section'),
-  //   'slots/IsolateButton': path.join(
-  //     __dirname,
-  //     'styleguide/components/IsolateButton'
-  //   )
-  // },
-  // styleguideDir: 'build/react-kawaii',
   serverPort: 8210
 }
