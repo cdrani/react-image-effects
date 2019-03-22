@@ -1,9 +1,9 @@
-Airbrush Effect
+Chalkboard Effect
 
 ```jsx
 <ImageEffect
   url="https://picsum.photos/900/300"
-  effect="airbrush"
+  effect="chalkboard"
   width="900px"
   height="300px"
 />
