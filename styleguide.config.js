@@ -61,5 +61,6 @@ module.exports = {
       base: '"Source Sans Pro", sans-serif'
     }
   },
+  styleguideDir: 'build',
   serverPort: 8210
 }
