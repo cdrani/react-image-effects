@@ -1,16 +1,21 @@
 {
   "name": "react-image-effects",
-  "vision": 2,
-  "alias": "react-image-effects",
+  "version": 2,
+  "scope": "cdrani",
+  "alias": [
+    "react-image-effects",
+    "react-image-effects.com",
+    "react-image-effects.com"
+  ],
   "builds": [
     {
-      "src": "./build/build/index.html",
+      "src": "./build/*.html",
       "use": "@now/static"
     }
   ],
   "github": {
     "enabled": true,
-    "silent": true,
+    "silent": false,
     "autoAlias": true,
     "autoJobCancelation": true
   }
