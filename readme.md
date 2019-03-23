@@ -50,6 +50,32 @@ const Example = () => (
 | `width`  | string | no       | '600px' |  |
 | `height` | string | no       | '300px' |
 
+### Effects
+
+Please reference documentation site to interact with the effects.
+
+- [x] airbrush
+- [x] chalkboard
+- [x] collage
+- [x] colored-chalkboard
+- [x] colored-pencil
+- [x] emboss
+- [x] flannel
+- [x] hallucination
+- [x] infrared
+- [x] low-ink-h
+- [x] low-ink-v
+- [x] mirror-h
+- [x] mirror-v
+- [x] mosaic
+- [x] night-vision
+- [x] none
+- [x] pencil
+- [x] photo-border
+- [x] selective-color
+- [x] warhol
+- [x] watercolor
+
 ### Documentation
 
 See the interactive styleguide:
