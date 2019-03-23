@@ -12,9 +12,6 @@
   <a href="https://circleci.com/gh/gokcan/react-shimmer">
     <img alt="Circle CI Status" src="https://circleci.com/gh/cdrani/react-image-effects.svg?style=shield">
   </a>
-  <a href="https://codeclimate.com/github/cdrani/react-image-effects/maintainability">
-    <img alt= "Maintainability" src="https://api.codeclimate.com/v1/badges/6121d4eb6cc7b8708c42/maintainability">
-  </a>
 </p>
 
 <p align="center">
@@ -32,21 +29,16 @@ or
 ### Usage
 
 ```js
-import React from 'react'
 import ImageEffect from 'react-image-effects'
 
-export default function App(props) {
-  return (
-    <div>
-      <ImageEffect
-        url="https://example.com/test.jpg"
-        effect="airbrush"
-        width="640px"
-        height="480px"
-      />
-    </div>
-  )
-}
+const Example = () => (
+  <ImageEffect
+    url="./test.jpg"
+    effect="airbrush"
+    width="640px"
+    height="360px"
+  />
+)
 ```
 
 ### Properties
@@ -54,14 +46,32 @@ export default function App(props) {
 | Prop     | Type   | Required | Default |
 | :------- | :----- | :------- | :------ |
 | `url`    | string | yes      |         |
-| `effect` | string | no       | 'none'  |  |
+| `effect` | enum   | no       | 'none'  |  |
 | `width`  | string | no       | '600px' |  |
 | `height` | string | no       | '300px' |
 
-## Contributing
+### Documentation
+
+See the interactive styleguide:
+[react-image-effects](https://react-image-effects.now.sh)
+
+### Development
+
+`yarn styleguide`
+or
+`npm run styleguide`
+
+styleguide server on [localhost:8210](localhost:8210)
+
+build
+`yarn styleguide:build`
+or
+`npm run styleguide:build`
+
+### Contributing
 
 PRs are welcome.
 
-## License
+### License
 
 MIT &copy; | [@cdrani](https://github.com/cdrani)
