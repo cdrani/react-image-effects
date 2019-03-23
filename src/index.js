@@ -21,7 +21,9 @@ const ImageEffect = ({ url, effect, width, height }) => {
 }
 
 ImageEffect.propTypes = {
+  /** local or remote link to image */
   url: PropTypes.string.isRequired,
+  /** effects to apply on image */
   effect: PropTypes.oneOf([
     'airbrush',
     'chalkboard',
@@ -45,7 +47,9 @@ ImageEffect.propTypes = {
     'warhol',
     'watercolor'
   ]),
+  /** width of component */
   width: PropTypes.string,
+  /** height of component */
   height: PropTypes.string
 }
 
