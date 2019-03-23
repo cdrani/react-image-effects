@@ -2,6 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import ImageEffect from '../src/'
+import effects from '../src/effects'
 
 const stories = storiesOf('ImageEffect', module)
 stories.addDecorator(
@@ -12,30 +13,6 @@ stories.addDecorator(
     maxPropsIntoLine: 4
   })
 )
-
-const effects = [
-  'airbrush',
-  'chalkboard',
-  'collage',
-  'colored-chalkboard',
-  'colored-pencil',
-  'emboss',
-  'flannel',
-  'hallucination',
-  'infrared',
-  'low-ink-h',
-  'low-ink-v',
-  'mirror-h',
-  'mirror-v',
-  'mosaic',
-  'night-vision',
-  'none',
-  'pencil',
-  'photo-border',
-  'selective-color',
-  'warhol',
-  'watercolor'
-]
 
 stories.addDecorator(storyFn => (
   <div

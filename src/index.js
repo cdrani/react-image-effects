@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import imageEffects from './imageEffects'
+import effects from './effects'
 
 const ImageEffect = ({ url, effect, width, height }) => {
   const Image = styled.div`
@@ -24,29 +25,7 @@ ImageEffect.propTypes = {
   /** local or remote link to image */
   url: PropTypes.string.isRequired,
   /** effects to apply on image */
-  effect: PropTypes.oneOf([
-    'airbrush',
-    'chalkboard',
-    'collage',
-    'colored-chalkboard',
-    'colored-pencil',
-    'emboss',
-    'flannel',
-    'hallucination',
-    'infrared',
-    'low-ink-h',
-    'low-ink-v',
-    'mirror-h',
-    'mirror-v',
-    'mosaic',
-    'night-vision',
-    'none',
-    'pencil',
-    'photo-border',
-    'selective-color',
-    'warhol',
-    'watercolor'
-  ]),
+  effect: PropTypes.oneOf(effects),
   /** width of component */
   width: PropTypes.string,
   /** height of component */
