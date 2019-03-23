@@ -1,24 +1,20 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import imageEffects from './imageEffects'
-import effects from './effects'
+import { effects } from './utils'
 
 const ImageEffect = ({ url, effect, width, height }) => {
   const Image = styled.div`
     width: ${width};
     height: ${height};
-    background-image: ${props => `url(${props.url})`};
+    background-image: url(${url});
     background-size: cover;
     background-position: center;
-  `
 
-  const effectObject = imageEffects(url)[effect]
-
-  const Effect = styled(Image)`
-    ${effectObject}
+    ${imageEffects(url)[effect]}
   `
-  return <Effect url={url} />
+  return <Image url={url} />
 }
 
 ImageEffect.propTypes = {

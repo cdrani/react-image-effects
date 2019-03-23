@@ -2,15 +2,13 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import ImageEffect from '../src/'
-import effects from '../src/effects'
+import { effects } from '../src/utils'
 
 const stories = storiesOf('ImageEffect', module)
 stories.addDecorator(
   withInfo({
     propTablesExclude: [ImageEffect],
-    inline: true,
-    maxPropObjectKeys: 4,
-    maxPropsIntoLine: 4
+    inline: true
   })
 )
 

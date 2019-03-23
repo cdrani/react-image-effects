@@ -1,4 +1,4 @@
-export default [
+const effects = [
   'airbrush',
   'chalkboard',
   'collage',
@@ -21,3 +21,5 @@ export default [
   'warhol',
   'watercolor'
 ]
+
+export { effects }
