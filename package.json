@@ -87,5 +87,11 @@
   },
   "files": [
     "dist"
+  ],
+  "browserslist": [
+    ">1%",
+    "last 1 version",
+    "Firefox ESR",
+    "not dead"
   ]
 }
