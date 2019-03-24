@@ -1,4 +1,4 @@
-ct-image-effects
+# react-image-effects
 
 > A small, customizable react component that adds effects to images. Currently compatible with **React**, but **React Native** support is on the way.
 
@@ -78,20 +78,24 @@ Please reference documentation site to interact with the effects.
 
 ### Documentation
 
-See the interactive styleguide:
+See the effects via storybook:
 [react-image-effects](https://react-image-effects.now.sh)
 
 ### Development
 
 `yarn storybook`
+
 or
+
 `npm run storybook`
 
 storybook server will be opened on [localhost:8000](localhost:8000)
 
 build
 `yarn storybook:build`
+
 or
+
 `npm run storybook:build`
 
 ### Contributing
