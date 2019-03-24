@@ -1,4 +1,10 @@
-import { configure } from '@storybook/react'
+import { addParameters, configure } from '@storybook/react'
+
+addParameters({
+  options: {
+    showPanel: false
+  }
+})
 
 const loadStories = () => {
   require('../stories/index.js')
