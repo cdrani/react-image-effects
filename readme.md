@@ -6,11 +6,20 @@
   <a href="https://www.npmjs.com/package/react-image-effects">
     <img alt= "NPM" src="https://img.shields.io/npm/v/react-image-effects.svg">
   </a>
+  <a href="https://www.npmjs.com/package/react-image-effects">
+    <img alt="NPM" src="https://img.shields.io/npm/l/react-image-effects.svg?color=brightgreen&label=license">
+  </a>
+  <a href="https://www.npmjs.com/package/react-image-effects">
+    <img alt="npm" src="https://img.shields.io/npm/dt/react-image-effects.svg">
+  </a>
   <a href="https://standardjs.com">
     <img alt="JavaScript Style Guide" src="https://img.shields.io/badge/code_style-standard-brightgreen.svg">
   </a>
   <a href="https://circleci.com/gh/gokcan/react-shimmer">
     <img alt="Circle CI Status" src="https://circleci.com/gh/cdrani/react-image-effects.svg?style=shield">
+  </a>
+  <a href="https://codeclimate.com/github/cdrani/react-image-effects/maintainability">
+    <img alt= "Maintainability" src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability">
   </a>
 </p>
 
@@ -83,6 +92,7 @@ See the effects via storybook:
 
 ### Development
 
+**server**
 `yarn storybook`
 
 or
@@ -91,7 +101,7 @@ or
 
 storybook server will be opened on [localhost:8000](localhost:8000)
 
-build
+**build**
 `yarn storybook:build`
 
 or
