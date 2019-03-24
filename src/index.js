@@ -1,51 +1,30 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import imageEffects from './imageEffects'
+import { effects } from './utils'
 
 const ImageEffect = ({ url, effect, width, height }) => {
   const Image = styled.div`
     width: ${width};
     height: ${height};
-    background-image: ${props => `url(${props.url})`};
+    background-image: url(${url});
     background-size: cover;
     background-position: center;
-  `
 
-  const effectObject = imageEffects(url)[effect]
-
-  const Effect = styled(Image)`
-    ${effectObject}
+    ${imageEffects(url)[effect]}
   `
-  return <Effect url={url} />
+  return <Image url={url} />
 }
 
 ImageEffect.propTypes = {
+  /** local or remote link to image */
   url: PropTypes.string.isRequired,
-  effect: PropTypes.oneOf([
-    'airbrush',
-    'chalkboard',
-    'collage',
-    'colored-chalkboard',
-    'colored-pencil',
-    'emboss',
-    'flannel',
-    'hallucination',
-    'infrared',
-    'low-ink-h',
-    'low-ink-v',
-    'mirror-h',
-    'mirror-v',
-    'mosaic',
-    'night-vision',
-    'none',
-    'pencil',
-    'photo-border',
-    'selective-color',
-    'warhol',
-    'watercolor'
-  ]),
+  /** effects to apply on image */
+  effect: PropTypes.oneOf(effects),
+  /** width of component */
   width: PropTypes.string,
+  /** height of component */
   height: PropTypes.string
 }
 
