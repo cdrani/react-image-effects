@@ -117,6 +117,12 @@ const imageEffects = src => ({
       }
     }
   ),
+  infrared: {
+    backgroundImage: `url(${src})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    filter: 'hue-rotate(180deg) saturate(2)'
+  },
   'low-ink-h': {
     backgroundImage: `url(${src}), url(${src}), url(${src})
 `,
