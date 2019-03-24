@@ -75,6 +75,10 @@ const imageEffects = src => ({
         backgroundPosition:
           'calc(50% - 1px) calc(50% - 1px), calc(50% + 1px) calc(50% + 1px)',
         filter: 'brightness(2) invert(1) grayscale(1)'
+      },
+      '::after': {
+        background: 'inherit',
+        mixBlendMode: 'color'
       }
     }
   ),
