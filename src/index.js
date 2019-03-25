@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import imageEffects from './imageEffects'
 import { effects } from './utils'
 
-const ImageEffect = ({ url, effect, width, height }) => {
+const ImageEffect = ({ url, effect, width, height, children }) => {
   const Image = styled.div`
     width: ${width};
     height: ${height};
@@ -14,7 +14,7 @@ const ImageEffect = ({ url, effect, width, height }) => {
 
     ${imageEffects(url)[effect]}
   `
-  return <Image url={url} />
+  return <Image url={url}>{children}</Image>
 }
 
 ImageEffect.propTypes = {
@@ -25,7 +25,9 @@ ImageEffect.propTypes = {
   /** width of component */
   width: PropTypes.string,
   /** height of component */
-  height: PropTypes.string
+  height: PropTypes.string,
+  /** React element */
+  children: PropTypes.element
 }
 
 ImageEffect.defaultProps = {
