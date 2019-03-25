@@ -1,6 +1,6 @@
 # react-image-effects
 
-> A small, customizable react component that adds effects to images. Currently compatible with **React**, but **React Native** support is on the way.
+> A small, customizable react component that adds effects to images.
 
 <p align="center">
   <a href="https://www.npmjs.com/package/react-image-effects">
@@ -41,12 +41,22 @@ or
 import ImageEffect from 'react-image-effects'
 
 const Example = () => (
-  <ImageEffect
-    url="./test.jpg"
-    effect="airbrush"
-    width="640px"
-    height="360px"
-  />
+  <div>
+    <ImageEffect
+      url="./test.jpg"
+      effect="airbrush"
+      width="640px"
+      height="360px"
+    />
+    <ImageEffect
+      url="./subject.jpg"
+      effect="infrared"
+      width="640px"
+      height="360px"
+    >
+      <p>Daytona</p>
+    </ImageEffect>
+  </div>
 )
 ```
 
@@ -61,7 +71,7 @@ const Example = () => (
 
 ### Effects
 
-Please reference documentation site to interact with the effects.
+Please reference documentation site to visualize the effects.
 
 - [x] airbrush
 - [x] chalkboard
