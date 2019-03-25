@@ -93,6 +93,7 @@ See the effects via storybook:
 ### Development
 
 **server**
+
 `yarn storybook`
 
 or
@@ -102,6 +103,7 @@ or
 storybook server will be opened on [localhost:8000](localhost:8000)
 
 **build**
+
 `yarn storybook:build`
 
 or
